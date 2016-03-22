@@ -1,20 +1,18 @@
-package com.hhi.bigdata.platform.push.service.app;
+package com.hhi.bigdata.platform.push.client;
 
+import com.hhi.vaas.platform.middleware.client.rest.APIGatewayClient;
+import com.hhi.vaas.platform.middleware.client.websocket.EventHandler;
+import com.hhi.vaas.platform.middleware.client.websocket.WebSocketClient;
+import org.apache.commons.io.IOUtils;
+import org.codehaus.jackson.type.TypeReference;
+
+import javax.ws.rs.core.Response;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URLEncoder;
 import java.security.KeyStore;
-
-import javax.ws.rs.core.Response;
-
-import org.apache.commons.io.IOUtils;
-import org.codehaus.jackson.type.TypeReference;
-
-import com.hhi.vaas.platform.middleware.client.rest.APIGatewayClient;
-import com.hhi.vaas.platform.middleware.client.websocket.EventHandler;
-import com.hhi.vaas.platform.middleware.client.websocket.WebSocketClient;
 
 public class PushClient {
 	private APIGatewayClient apiGatewayClient;
@@ -46,7 +44,7 @@ public class PushClient {
 	private static String password; 
 	
 	/** 3rd Party consumerKey and consumerSecret for authentication which is given at installation time */
-	private static String consumerKey; 
+	private static String consumerKey;
 	private static String consumerSecret;
 	
 	/**
@@ -291,7 +289,7 @@ public class PushClient {
 //			getDataUsingRest(cepApiUrl + "/getSensorData?ruleName=" + sensorRuleName);
 			
 			// 3. Get event data using WebScoket
-			getDataUsingWebSocket(pushApiUrl + "/sensor", sensorRuleName);
+			getDataUsingWebSocket(pushApiUrl + "/sensor", sensorRuleName);//"ws://10.100.16.82:9000/websocket"/sensor/springxd;
 			
 			// 4. Close a WebSocket Session
 			Thread.sleep(duration * 60 * 1000);

@@ -10,7 +10,7 @@
  * ---------------	----------------	------------
  * Sang-cheon Park	2015. 10. 8.		First Draft.
  */
-package com.hhi.bigdata.platform.push.service.app;
+package com.hhi.bigdata.platform.push.client;
 
 import java.io.File;
 import java.io.FileInputStream;
