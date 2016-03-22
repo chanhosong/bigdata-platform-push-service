@@ -2,6 +2,7 @@ package com.hhi.bigdata.platform.push.server;
 
 import asia.stampy.common.StampyLibrary;
 import asia.stampy.common.gateway.AbstractStampyMessageGateway;
+import com.hhi.bigdata.platform.push.server.handler.EventHandler;
 import com.hhi.bigdata.platform.push.server.listener.TestServerMessageListener;
 import com.hhi.bigdata.platform.push.server.netty.NettyInitializer;
 
@@ -10,6 +11,8 @@ import com.hhi.bigdata.platform.push.server.netty.NettyInitializer;
  */
 @StampyLibrary(libraryName = "stampy-examples")
 public class PushServer {
+	private EventHandler handler;
+
 	private AbstractStampyMessageGateway gateway;
 
 	/**

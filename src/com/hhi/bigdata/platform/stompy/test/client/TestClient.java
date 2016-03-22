@@ -1,11 +1,6 @@
 package com.hhi.bigdata.platform.stompy.test.client;
 
-/**
- * Created by SongChanHo on 2016. 3. 21..
- */
-
 import asia.stampy.client.message.connect.ConnectMessage;
-import asia.stampy.common.StampyLibrary;
 import asia.stampy.common.gateway.AbstractStampyMessageGateway;
 import asia.stampy.examples.loadtest.server.TestServer;
 import com.hhi.bigdata.platform.stompy.test.client.listener.TestClientMessageListener;
@@ -15,7 +10,6 @@ import com.hhi.bigdata.platform.stompy.test.client.netty.NettyInitializer;
  * Sends many messages to a {@link TestServer}, prints stats on the operation
  * and terminates. Run the {@link TestServer} prior to running this client.
  */
-@StampyLibrary(libraryName = "stampy-examples")
 public class TestClient {
     private AbstractStampyMessageGateway gateway;
     private TestClientMessageListener listener;
