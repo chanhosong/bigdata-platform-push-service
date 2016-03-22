@@ -140,6 +140,7 @@ public class PushClient {
 	 * @throws URISyntaxException
 	 * @throws InterruptedException 
 	 */
+
 	public void getDataUsingWebSocket(String endpointURI, String ruleName) throws URISyntaxException, InterruptedException {
 		final boolean ackMode = true;
 		
@@ -148,7 +149,7 @@ public class PushClient {
 			public void handleMessageEvent(String msg) {
 				/** describe something to do */
 				System.err.println("Received Message via WebSocket : " + msg);
-				
+
 				/** in case of ackMode is enable, invoke sendAck or sendNack to receive next message */
 				sendAck();
 				//sendNack();
